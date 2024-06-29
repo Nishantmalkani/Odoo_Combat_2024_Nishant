@@ -24,7 +24,7 @@ def login(request):
         email = request.POST['email']
         password = request.POST['password']
         try:
-            user_info = Facultydetail.objects.get(email=email)
+            user_info = user.objects.get(email=email)
             if user_info.password == password:
                 request.session['user_login'] = email
                 user = request.session['user_login']
